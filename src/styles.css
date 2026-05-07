@@ -1199,6 +1199,32 @@ a {
   text-align: center;
 }
 
+.chapter-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 520px;
+  margin: 46px auto;
+  color: #cfa04b;
+}
+
+.chapter-divider::before,
+.chapter-divider::after {
+  height: 1px;
+  flex: 1;
+  background: rgba(207, 160, 75, 0.36);
+  content: "";
+}
+
+.chapter-divider span {
+  min-width: 74px;
+  color: #cfa04b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1;
+  text-align: center;
+}
+
 .reader-footer {
   display: flex;
   justify-content: center;

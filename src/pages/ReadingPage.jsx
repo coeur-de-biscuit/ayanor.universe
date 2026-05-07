@@ -2,7 +2,7 @@ import { ChevronLeft, Sparkles } from 'lucide-react';
 
 export function ReadingPage({ character, story, onBack }) {
   const blocks =
-    textToBlocks(story.text) ??
+    textToBlocks(story.text, story.media) ??
     story.content ??
     splitStory(story.body).map((paragraph) => ({ type: 'text', value: paragraph }));
   const heroImage = story.heroImage ?? character.splash;
@@ -38,6 +38,14 @@ export function ReadingPage({ character, story, onBack }) {
             );
           }
 
+          if (block.type === 'divider') {
+            return (
+              <div className="chapter-divider" key={`${story.id}-${index}`}>
+                <span>{block.label}</span>
+              </div>
+            );
+          }
+
           return (
             <p className={index === 0 ? 'lead-paragraph' : undefined} key={`${story.id}-${index}`}>
               {block.value}
@@ -56,14 +64,27 @@ export function ReadingPage({ character, story, onBack }) {
   );
 }
 
-function textToBlocks(text) {
+function textToBlocks(text, media = {}) {
   if (!text) return null;
 
   return text
     .split(/\r?\n\s*\r?\n/)
     .map((paragraph) => paragraph.trim())
     .filter(Boolean)
-    .map((paragraph) => ({ type: 'text', value: paragraph }));
+    .map((paragraph) => {
+      const divider = paragraph.match(/^\[\[divider:(.+)\]\]$/i);
+      if (divider) {
+        return { type: 'divider', label: divider[1].trim() };
+      }
+
+      const image = paragraph.match(/^\[\[image:(.+)\]\]$/i);
+      if (image) {
+        const mediaItem = media[image[1].trim()];
+        if (mediaItem) return { type: 'image', ...mediaItem };
+      }
+
+      return { type: 'text', value: paragraph };
+    });
 }
 
 function splitStory(body) {

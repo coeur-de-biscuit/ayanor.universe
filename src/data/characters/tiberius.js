@@ -28,6 +28,13 @@ export const tierius = {
       heroImage: tibasPraia,
       body: "Tiberius promete a Cécile e Cristine levá-las à praia, onde poderão relaxar e observar os rapazes. Porém, a Torre Arco-Íris tem outros planos.",
       text: ultimoVeraoText,
+      media: {
+        tiberius: {
+          image: tiberiusImage,
+          caption:
+            "Tiberius Erasthenes, durante uma aula que oficialmente nunca aconteceu.",
+        },
+      },
       content: [
         {
           type: "text",

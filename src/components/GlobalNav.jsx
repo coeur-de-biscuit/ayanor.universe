@@ -10,6 +10,7 @@ export function GlobalNav({ query, onQueryChange }) {
       </div>
       <nav aria-label="Principal">
         <a href="#personagens">Personagens</a>
+        <a href="#mundo">Mundo</a>
         <a href="#historia">Historia</a>
         <a href="#cronicas">Cronicas</a>
         <a href="#galeria">Splash Arts</a>

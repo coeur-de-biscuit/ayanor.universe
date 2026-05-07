@@ -7,7 +7,7 @@ export const diovane = {
   epithet: "Titulo ainda nao definido",
   role: "Funcao ainda nao definida",
   faction: "Faccao ainda nao definida",
-  region: "Regiao ainda nao definida",
+  region: "Arles",
   threat: "Indefinida",
   portrait: diovaneImage,
   splash: diovaneImage,

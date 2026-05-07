@@ -4,9 +4,11 @@ import { CharacterRoster } from './components/CharacterRoster';
 import { CharacterShowcase } from './components/CharacterShowcase';
 import { GlobalNav } from './components/GlobalNav';
 import { characters } from './data/characters';
+import { worldRegions } from './data/worldRegions';
 import { CharacterDossier } from './pages/CharacterDossier';
 import { ChroniclePage } from './pages/ChroniclePage';
 import { ReadingPage } from './pages/ReadingPage';
+import { WorldSection } from './pages/WorldSection';
 import './styles.css';
 
 function App() {
@@ -65,6 +67,7 @@ function App() {
       <CharacterShowcase character={selected} onMove={moveCharacter} />
       <CharacterRoster characters={filteredCharacters} selectedId={selected.id} onSelectCharacter={openCharacter} />
       <CharacterDossier character={selected} onOpenChronicle={openChronicle} onOpenStory={openStory} />
+      <WorldSection characters={characters} onSelectCharacter={openCharacter} regions={worldRegions} />
     </main>
   );
 }

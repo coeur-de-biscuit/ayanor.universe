@@ -1,6 +1,6 @@
 import { Crown, Search } from 'lucide-react';
 
-export function GlobalNav({ query, onQueryChange }) {
+export function GlobalNav({ activePage, onNavigate, query, onQueryChange }) {
   return (
     <header className="global-nav">
       <div className="brand">
@@ -9,8 +9,12 @@ export function GlobalNav({ query, onQueryChange }) {
         <strong>Universo</strong>
       </div>
       <nav aria-label="Principal">
-        <a href="#personagens">Personagens</a>
-        <a href="#mundo">Mundo</a>
+        <button className={activePage === 'home' ? 'nav-link active' : 'nav-link'} onClick={() => onNavigate('home')} type="button">
+          Personagens
+        </button>
+        <button className={activePage === 'world' ? 'nav-link active' : 'nav-link'} onClick={() => onNavigate('world')} type="button">
+          Mundo
+        </button>
         <a href="#historia">Historia</a>
         <a href="#cronicas">Cronicas</a>
         <a href="#galeria">Splash Arts</a>

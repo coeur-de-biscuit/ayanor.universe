@@ -15,6 +15,7 @@ function App() {
   const [selectedId, setSelectedId] = useState(characters[0].id);
   const [readingStory, setReadingStory] = useState(null);
   const [readingChronicle, setReadingChronicle] = useState(false);
+  const [activePage, setActivePage] = useState('home');
   const [query, setQuery] = useState('');
 
   const selected = characters.find((character) => character.id === selectedId) ?? characters[0];
@@ -33,6 +34,15 @@ function App() {
     setSelectedId(id);
     setReadingStory(null);
     setReadingChronicle(false);
+    setActivePage('home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigate = (page) => {
+    setActivePage(page);
+    setReadingStory(null);
+    setReadingChronicle(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openStory = (story) => {
@@ -63,11 +73,16 @@ function App() {
 
   return (
     <main className="site-shell">
-      <GlobalNav query={query} onQueryChange={setQuery} />
-      <CharacterShowcase character={selected} onMove={moveCharacter} />
-      <CharacterRoster characters={filteredCharacters} selectedId={selected.id} onSelectCharacter={openCharacter} />
-      <CharacterDossier character={selected} onOpenChronicle={openChronicle} onOpenStory={openStory} />
-      <WorldSection characters={characters} onSelectCharacter={openCharacter} regions={worldRegions} />
+      <GlobalNav activePage={activePage} onNavigate={navigate} query={query} onQueryChange={setQuery} />
+      {activePage === 'world' ? (
+        <WorldSection characters={characters} onSelectCharacter={openCharacter} regions={worldRegions} />
+      ) : (
+        <>
+          <CharacterShowcase character={selected} onMove={moveCharacter} />
+          <CharacterRoster characters={filteredCharacters} selectedId={selected.id} onSelectCharacter={openCharacter} />
+          <CharacterDossier character={selected} onOpenChronicle={openChronicle} onOpenStory={openStory} />
+        </>
+      )}
     </main>
   );
 }

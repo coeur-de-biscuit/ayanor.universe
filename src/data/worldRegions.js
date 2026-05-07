@@ -10,22 +10,34 @@ export const worldRegions = [
       "Antes dos grandes reinos humanos, Arles foi atravessada por casas elficas que deixaram bibliotecas vivas, pactos de linhagem e estradas encantadas. Hoje, o continente veste essa memoria como luxo: bonito na superficie, perigoso em qualquer salao onde alguem sorri demais.",
     locations: [
       {
+        id: "prismeer",
         name: "Prismeer",
         kind: "Corte antiga",
         description:
           "Um dominio de saloes espelhados, jardins impossiveis e familias que tratam etiqueta como arma politica.",
+        history:
+          "Prismeer nasceu como uma corte elfica de verao e sobreviveu virando teatro politico. Cada familia preserva uma versao diferente da propria origem, e nenhuma delas e completamente falsa.",
+        characterIds: ["ophelia", "nanette"],
       },
       {
+        id: "porto-celeste",
         name: "Porto Celeste",
         kind: "Cidade costeira",
         description:
           "Destino de verao para nobres, artistas e arcanistas cansados. As praias sao lindas; os contratos sociais, menos.",
+        history:
+          "Porto Celeste cresceu ao redor de docas brancas e mansoes sazonais. A cidade vende descanso, mas coleciona escandalos como quem coleciona conchas raras.",
+        characterIds: ["diovane"],
       },
       {
+        id: "vinhedos-miralune",
         name: "Vinhedos de Miralune",
         kind: "Interior nobre",
         description:
           "Regiao de casas senhoriais, adegas seculares e ruinas elficas escondidas entre colinas perfeitas.",
+        history:
+          "Miralune guarda pactos agrarios anteriores aos reinos humanos. As vinhas crescem sobre ruinas, e algumas safras parecem lembrar nomes esquecidos.",
+        characterIds: [],
       },
     ],
   },
@@ -40,16 +52,24 @@ export const worldRegions = [
       "A historia de Ayanor e escrita por magos, revisada por torres e contestada por qualquer pessoa sensata que tenha sobrevivido a uma aula pratica.",
     locations: [
       {
+        id: "torre-arco-iris",
         name: "Torre Arco-Iris",
         kind: "Torre magica",
         description:
           "Um compendium vivo de magia, arquitetura impossível e decisões questionáveis.",
+        history:
+          "A Torre Arco-Iris nao foi construida em uma unica epoca. Ela soma reformas, acidentes e teimosias arcanas de muitos seculos.",
+        characterIds: ["tiberius-erasthenes"],
       },
       {
+        id: "biblioteca-veludo-negro",
         name: "Biblioteca de Veludo Negro",
         kind: "Arquivo arcano",
         description:
           "Livros selados, pactos de leitura e corredores que mudam quando percebem pressa.",
+        history:
+          "Dizem que a biblioteca aceita leitores, mas nunca visitantes. Quem entra sem pergunta certa sai com uma divida errada.",
+        characterIds: ["tiberius-erasthenes"],
       },
     ],
   },

@@ -1,5 +1,7 @@
 import { aladdinSane } from "./aladdinSane";
-import { tierius } from "./tiberius";
+import { diovane } from "./diovane";
 import { ophelia } from "./ophelia";
+import { taiWang } from "./taiWang";
+import { tierius } from "./tiberius";
 
-export const characters = [tierius, aladdinSane, ophelia];
+export const characters = [tierius, aladdinSane, ophelia, taiWang, diovane];

@@ -113,6 +113,12 @@ a {
   text-transform: inherit;
 }
 
+.mobile-menu-button,
+.menu-scrim,
+.mobile-search {
+  display: none;
+}
+
 .search-box {
   gap: 10px;
   min-height: 44px;
@@ -1272,14 +1278,87 @@ a {
 
 @media (max-width: 980px) {
   .global-nav {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
     gap: 14px;
     padding: 16px;
   }
 
   .global-nav nav {
-    flex-wrap: wrap;
-    gap: 14px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    align-items: flex-start;
+    flex-direction: column;
+    width: min(320px, 86vw);
+    height: 100vh;
+    gap: 0;
+    padding: 88px 22px 22px;
+    border-left: 1px solid rgba(168, 132, 59, 0.42);
+    background: #111419;
+    box-shadow: -28px 0 80px rgba(0, 0, 0, 0.42);
+    transform: translateX(105%);
+    transition: transform 220ms ease;
+  }
+
+  .global-nav nav.open {
+    transform: translateX(0);
+  }
+
+  .global-nav nav a,
+  .global-nav nav .nav-link {
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+  }
+
+  .mobile-menu-button {
+    position: relative;
+    z-index: 30;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    color: #f4efe5;
+    background: #1d1d1d;
+  }
+
+  .menu-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    display: block;
+    border: 0;
+    background: rgba(0, 0, 0, 0.56);
+  }
+
+  .global-nav > .search-box {
+    display: none;
+  }
+
+  .mobile-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 44px;
+    margin-top: 18px;
+    padding: 0 14px;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    color: #c9c9c9;
+    background: #1d1d1d;
+  }
+
+  .mobile-search input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    background: transparent;
   }
 
   .showcase {
@@ -1312,10 +1391,6 @@ a {
 }
 
 @media (max-width: 640px) {
-  .global-nav nav {
-    display: none;
-  }
-
   .showcase {
     min-height: 560px;
   }

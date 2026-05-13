@@ -1,4 +1,6 @@
 import sarayaImage from "../../assets/saraya.png";
+import sarayaConto1Image from "../../assets/saraya-conto1.png";
+import sarayaConto1Text from "./saraya/as-irmas-da-trama.txt?raw";
 import { chroniclePlaceholder } from "../chroniclePlaceholder";
 
 export const saraya = {
@@ -22,21 +24,22 @@ export const saraya = {
     {
       id: "saraya-1",
       chapter: "Conto I",
-      title: "Conto ainda nao criado",
-      body: "Este conto de Saraya ainda nao foi escrito. Placeholder temporario para manter a pagina organizada.",
-      content: [
-        {
-          type: "text",
-          value:
-            "Este conto ainda nao foi criado. Quando a historia oficial estiver pronta, substitua este placeholder por um arquivo .txt importado ou por blocos de content.",
+      title: "As Irmãs da Trama",
+      heroImage: sarayaConto1Image,
+      body:
+        "Saraya tenta praticar letras, nomes e magia enquanto Charlotte transforma uma tarde comum em uma história sobre luz, sombra e a origem da Trama.",
+      text: sarayaConto1Text,
+      media: {
+        estudo: {
+          image: sarayaConto1Image,
+          caption:
+            "Saraya descobrindo que letras, nomes e magia talvez sejam a mesma coisa vista de jeitos diferentes.",
         },
-        {
-          type: "text",
-          value:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed arcu vitae augue dignissim porta.",
-        },
-      ],
+      },
     },
   ],
-  gallery: [{ id: "saraya-a", title: "Saraya", image: sarayaImage }],
+  gallery: [
+    { id: "saraya-a", title: "Saraya", image: sarayaImage },
+    { id: "saraya-b", title: "As Irmãs da Trama", image: sarayaConto1Image },
+  ],
 };

@@ -6,14 +6,14 @@ import { chroniclePlaceholder } from "../chroniclePlaceholder";
 export const saraya = {
   id: "saraya",
   name: "Saraya",
-  epithet: "Titulo ainda nao definido",
+  epithet: "A Pequena Sombra da Trama",
   role: "Funcao ainda nao definida",
   faction: "Faccao ainda nao definida",
   region: "Regiao ainda nao definida",
   threat: "Indefinida",
   portrait: sarayaImage,
   splash: sarayaImage,
-  quote: "Frase de personagem ainda nao criada.",
+  quote: "Eu sou Shar e você é Selûne. Assim a magia fica bonita.",
   info:
     "Ficha de Saraya ainda nao foi escrita. Use este espaco para descrever historia, personalidade, conexoes e papel no setting.",
   secret:
